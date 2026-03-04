@@ -58,7 +58,7 @@ export default function Header() {
         </nav>
 
         <div className="flex flex-1 lg:flex-none justify-end items-center gap-4 md:gap-6 2k:gap-12">
-          <div className="hidden sm:flex items-center gap-5 2k:gap-10 text-gray-400">
+          <div className="flex items-center gap-5 2k:gap-10 text-gray-400">
             <a href="#" className="hover:text-purple-400 transition-all hover:scale-110">
               <FaGithub size={isScrolled ? 20 : 22} className="2k:w-8 2k:h-8" />
             </a>
@@ -72,10 +72,6 @@ export default function Header() {
               <FaTwitter size={isScrolled ? 20 : 22} className="2k:w-8 2k:h-8" />
             </a>
           </div>
-
-          <button className="hidden md:block px-6 py-2 2k:px-10 2k:py-4 border border-white/20 rounded-full text-[10px] 2k:text-[14px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all font-bold">
-            Connect
-          </button>
 
           <button 
             className="lg:hidden flex flex-col gap-1.5 z-[110] p-2"
