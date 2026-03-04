@@ -39,7 +39,7 @@ export default function Header() {
     >
       <div className="max-w-[1920px] mx-auto px-6 md:px-10 2k:px-20 flex justify-between items-center relative">
         
-        <div className="flex-1 lg:flex-none">
+        <div className="z-[110]">
           <div className="text-xl md:text-2xl 2k:text-4xl font-bold tracking-tighter text-white uppercase group cursor-pointer">
             AETERNA<span className="text-purple-500 group-hover:animate-pulse">.</span>
           </div>
@@ -57,8 +57,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 lg:flex-none justify-end items-center gap-4 md:gap-6 2k:gap-12">
-          <div className="flex items-center gap-5 2k:gap-10 text-gray-400">
+        <div className="flex items-center gap-4 md:gap-6 2k:gap-12">
+          <div className="hidden sm:flex items-center gap-5 2k:gap-10 text-gray-400">
             <a href="#" className="hover:text-purple-400 transition-all hover:scale-110">
               <FaGithub size={isScrolled ? 20 : 22} className="2k:w-8 2k:h-8" />
             </a>
@@ -74,12 +74,12 @@ export default function Header() {
           </div>
 
           <button 
-            className="lg:hidden flex flex-col gap-1.5 z-[110] p-2"
+            className="lg:hidden flex flex-col justify-center items-end gap-1.5 z-[110] w-8 h-8"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <div className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <div className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`} />
-            <div className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <div className={`h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
+            <div className={`h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? "w-0 opacity-0" : "w-4"}`} />
+            <div className={`h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-5"}`} />
           </button>
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function Header() {
       <div className={`lg:hidden fixed inset-0 w-full h-screen bg-black/98 backdrop-blur-2xl transition-all duration-500 z-[105] ${
         isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
       }`}>
-        <nav className="flex flex-col items-center justify-center h-full gap-8 px-6">
+        <nav className="flex flex-col items-center justify-center h-full gap-8 px-6 text-center"> 
           {navLinks.map((link, i) => (
             <a 
               key={link.name} 
